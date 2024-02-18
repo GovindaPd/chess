@@ -1,8 +1,9 @@
 #import kivy
 from kivy.config import Config
-Config.set('graphics', 'width', '360')
-Config.set('graphics', 'height', '720')
 Config.set('kivy', 'window_icon', 'static/knight32x32.png')
+#Config.set('graphics', 'width', '360')
+#Config.set('graphics', 'height', '720')
+
 
 from kivy.app import App
 from kivy.lang import Builder
