@@ -36,18 +36,18 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-# requirements = python3.8,kivy,pillow,requests,urllib3,chardet,idna
-requirements = python3.9,kivy==2.3.0,pillow
+# requirements = python3.8,kivy,requests,urllib3,chardet,idna,ffpyplayer
+requirements = python3,kivy==2.1.0, sdl2_ttf==2.0.15, pillow
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/static/chessbg.png
+#presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
-icon.filename = %(source.dir)s/static/knight32x32.png
+#icon.filename = %(source.dir)s/images/appicon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -66,7 +66,7 @@ orientation = portrait
 osx.python_version = 3.9
 
 # Kivy version to use
-osx.kivy_version = 2.3.0
+osx.kivy_version = 2.2.0
 
 #
 # Android specific
@@ -86,8 +86,7 @@ fullscreen = 0
 #android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 28
-android.api = 33
+android.api = 31
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
@@ -97,7 +96,6 @@ android.minapi = 21
 
 # (str) Android NDK version to use
 #android.ndk = 19b
-android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 28
@@ -235,7 +233,7 @@ android.archs = armeabi-v7a
 
 # (str) python-for-android branch to use, defaults to master
 #p4a.branch = master
-p4a.branch = develop
+p4a.branch = release-2022.12.20
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =
