@@ -232,8 +232,8 @@ android.archs = armeabi-v7a
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
-p4a.branch = release-2022.12.20
+#p4a.branch = master #release-2022.12.20
+p4a.branch = develop
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =
