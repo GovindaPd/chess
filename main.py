@@ -1,27 +1,27 @@
-#import kivy
 from kivy.config import Config
-Config.set('kivy', 'window_icon', 'static/knight32x32.png')
+Config.set('kivy', 'window_icon', './static/knight32x32.png')
 #Config.set('graphics', 'width', '360')
 #Config.set('graphics', 'height', '720')
-
-
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
-#from kivy.uix.checkbox import CheckBox
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
-#from kivy.uix.anchorlayout import AnchorLayout
-from kivy.properties import StringProperty, NumericProperty #BooleanProperty
+from kivy.properties import StringProperty, NumericProperty
 from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
-from functools import partial
+#from functools import partial
 from copy import deepcopy
 from chess import Chess
 from config import odd_color, even_color, check_color, move_color, pm_color, gui_m, game_level, man_color, background
-# from kivy.core.window import Window
+
+def mypartial(fun, *args, **kwargs):
+    def inner(*nargs):
+        nargs = args+nargs
+        fun(*nargs)
+    return inner
 
 class MainWindow(BoxLayout):
     pass
@@ -110,7 +110,7 @@ class GameWindow(Screen):
                 
             chessbtn = Button(background_normal='' , background_color=mark_color, text=txt, font_name='static/chess_fonts/CHEQ_TT.ttf',\
                              color=font_color, font_size=32, size=(50,50), border=(0, 0, 0, 0), size_hint=(1,.6))
-            chessbtn.bind(on_press=partial(self.make_move, __class__, box_id))
+            chessbtn.bind(on_press=mypartial(self.make_move, __class__, box_id))
             self.board_layout.add_widget(chessbtn)
             self.widget_ids[box_id] = chessbtn
 
@@ -345,10 +345,10 @@ class GameWindow(Screen):
                 for dead in GameWindow.dead_list:
                     if dead[0]==self.my_turn:
                         self.h_dead_layout.add_widget(Label(text=gui_m[dead[0:2]], font_size=32,\
-                                                font_name='static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.my_turn]))
+                                                font_name='./static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.my_turn]))
                     else:
                         self.c_dead_layout.add_widget(Label(text=gui_m[dead[0:2]], font_size=32,\
-                                                font_name='static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.opp_turn]))
+                                                font_name='./static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.opp_turn]))
     def stop_command(self, txt, activ):
         self.head_lbl.text = txt
         self.button_action_enabled = activ
