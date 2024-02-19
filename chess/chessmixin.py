@@ -183,7 +183,7 @@ class ChessMixin:
                         my_p = self.chessman_points[cm[1]] if cm[1]!='S' else self.pawn_points[abs(self.step[self.for_who]-\
                                 int(self.my['chessmans_positions'][cm][0]))]
                         maxs.append(opp_p-my_p)
-                return max(maxs)
+                return max(maxs, default=0)
         else:
             return 0 if len(self.my['legal_moves'].get(self.kid[self.for_who],[]))>0 else -1
 
@@ -302,7 +302,7 @@ class ChessMixin:
                         else:
                             travers_chessmans.setdefault(man, dp+self.chessman_points[self.chessboard[threated_boxes[0]][1]]-self.chessman_points[man[1]])
   
-        return max(travers_chessmans.values()) if len(travers_chessmans)>0 else 0
+        return max(travers_chessmans.values(),default=0) if len(travers_chessmans)>0 else 0
 
     @staticmethod
     def join_lists(mydict,*args,**kwargs):
