@@ -1,5 +1,5 @@
 from kivy.config import Config
-Config.set('kivy', 'window_icon', './static/knight32x32.png')
+Config.set('kivy', 'window_icon', 'static/knight32x32.png')
 #Config.set('graphics', 'width', '360')
 #Config.set('graphics', 'height', '720')
 from kivy.app import App
@@ -345,10 +345,10 @@ class GameWindow(Screen):
                 for dead in GameWindow.dead_list:
                     if dead[0]==self.my_turn:
                         self.h_dead_layout.add_widget(Label(text=gui_m[dead[0:2]], font_size=32,\
-                                                font_name='./static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.my_turn]))
+                                                font_name='static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.my_turn]))
                     else:
                         self.c_dead_layout.add_widget(Label(text=gui_m[dead[0:2]], font_size=32,\
-                                                font_name='./static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.opp_turn]))
+                                                font_name='static/chess_fonts/CHEQ_TT.ttf', color=man_color[self.opp_turn]))
     def stop_command(self, txt, activ):
         self.head_lbl.text = txt
         self.button_action_enabled = activ
