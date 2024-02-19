@@ -362,5 +362,9 @@ class MyChessApp(App):
 
     
 if __name__=='__main__':
-    obj = MyChessApp()
-    obj.run()
+    try:
+        obj = MyChessApp()
+        obj.run()
+    except Exception as e:
+        with open(r"mytxt.txt",'a') as fobj:
+            fobj.write(e)
