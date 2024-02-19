@@ -7,7 +7,7 @@ title = Chess
 package.name = ChessPlay
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.stack
+package.domain = org.govindapd
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -37,7 +37,7 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 # requirements = python3.8,kivy,pillow,requests,urllib3,chardet,idna
-requirements = python3,kivy==2.3.0,urllib3,pillow
+requirements = python3.9,kivy==2.3.0,pillow
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -63,7 +63,7 @@ orientation = portrait
 # author = © Copyright Info
 
 # change the major version of python used by the app
-osx.python_version = 3
+osx.python_version = 3.9
 
 # Kivy version to use
 osx.kivy_version = 2.3.0
@@ -86,7 +86,8 @@ fullscreen = 0
 #android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
-android.api = 28
+#android.api = 28
+android.api = 33
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
@@ -96,6 +97,7 @@ android.minapi = 21
 
 # (str) Android NDK version to use
 #android.ndk = 19b
+android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 28
@@ -233,7 +235,7 @@ android.archs = armeabi-v7a
 
 # (str) python-for-android branch to use, defaults to master
 #p4a.branch = master
-p4a.branch = release-2022.12.20
+p4a.branch = master
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =
