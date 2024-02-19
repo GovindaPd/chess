@@ -1,3 +1,5 @@
+import kivy
+kivy.require('2.1.0')
 from kivy.config import Config
 Config.set('kivy', 'window_icon', 'static/knight32x32.png')
 #Config.set('graphics', 'width', '360')
